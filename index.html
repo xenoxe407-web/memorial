@@ -4,12 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorial</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Hello Firebase 🌸</h1>
+    <div class="container">
 
-    <script type="module" src="firebase.js"></script>
+        <h1>🌸 Memorial 🌸</h1>
+
+        <div id="memorial-area">
+
+            <div id="urn">🏺</div>
+
+            <!-- Message Popup -->
+            <div id="popup" class="hidden">
+                <p id="popup-message"></p>
+            </div>
+
+        </div>
+
+        <div id="flower-basket">
+
+            <h3>Flower Basket</h3>
+
+            <p id="selectedFlowerText">
+                Selected Flower: None
+            </p>
+
+            <button class="flower-option" data-flower="rose">🌹 Rose</button>
+            <button class="flower-option" data-flower="tulip">🌷 Tulip</button>
+            <button class="flower-option" data-flower="sunflower">🌻 Sunflower</button>
+            <button class="flower-option" data-flower="cherry">🌸 Cherry Blossom</button>
+
+        </div>
+
+    </div>
+
+    <!-- Offer Flower Modal -->
+
+    <div id="offerModal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>🌸 Offer a Flower</h2>
+
+            <input
+                type="text"
+                id="authorInput"
+                placeholder="Your name"
+            >
+
+            <textarea
+                id="messageInput"
+                placeholder="Leave a message for Tin 💜"
+            ></textarea>
+
+            <div class="modal-buttons">
+
+                <button id="cancelBtn">
+                    Cancel
+                </button>
+
+                <button id="offerBtn">
+                    🌸 Offer Flower
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>
