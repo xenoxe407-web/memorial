@@ -115,6 +115,8 @@
 
     gap:16px;
 
+    font-family: "Pixelify Sans", sans-serif;
+
 }
 
 .memory-form label{
@@ -210,9 +212,7 @@
 
     display:block;
 
-    width:82%;
-
-    margin:32px auto 24px;
+    margin:20px auto 24px;
 
 }
 
@@ -230,7 +230,7 @@
 
     color:white;
 
-    font-family:inherit;
+    font-family: "Pixelify Sans", sans-serif;
 
     font-size:13px;
 
@@ -259,6 +259,8 @@
     font-size:10px;
 
     line-height:1.6;
+
+    font-family: "Pixelify Sans", sans-serif;
 
 }
 

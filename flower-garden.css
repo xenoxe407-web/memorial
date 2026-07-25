@@ -524,7 +524,7 @@ body{
 
     color:#8f84a5;
 
-    font-size:13px;
+    font-size:8px;
 
     margin-top:6px;
     margin-bottom:4px;
@@ -533,7 +533,7 @@ body{
 
 #popupAuthor{
 
-    margin:0;
+    margin:10px auto 0px;
 
     color:#34204f;
 
@@ -559,6 +559,8 @@ body{
 
     white-space:pre-wrap;
 
+    font-size: 12px;
+
 }
 
 #popupDate{
@@ -568,6 +570,8 @@ body{
     color:#8f84a5;
 
     margin-bottom:18px;
+
+    font-size: 8px;
 
 }
 

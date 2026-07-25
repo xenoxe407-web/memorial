@@ -704,6 +704,8 @@ body{
 
     z-index:9999;
 
+    font-family: "Pixelify Sans", sans-serif;
+
 }
 
 .modal-overlay.show{
@@ -889,6 +891,8 @@ body{
     font-style:italic;
 
     line-height:1.6;
+
+    font-family: "Pixelify Sans", sans-serif;
 
 }
 

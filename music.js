@@ -26,24 +26,29 @@ if (!musicButton || !musicIcon || !bgMusic) {
     const savedTime =
         parseFloat(localStorage.getItem("musicTime")) || 0;
 
-    // Restore playback position
-    bgMusic.currentTime = savedTime;
+    // Wait until audio metadata is ready
+    bgMusic.addEventListener("loadedmetadata", () => {
 
-    if (savedPlaying) {
+        if (savedTime > 0) {
+            bgMusic.currentTime = savedTime;
+        }
 
-        bgMusic.play().then(() => {
+        if (savedPlaying) {
 
-            musicIcon.src = "assets/icons/music-on.png";
+            bgMusic.play().then(() => {
 
-        }).catch(() => {
+                musicIcon.src = "assets/icons/music-on.png";
 
-            // Browser blocked autoplay.
-            // Wait for next user interaction.
-            musicIcon.src = "assets/icons/music-off.png";
+            }).catch(() => {
 
-        });
+                // Browser blocked autoplay
+                musicIcon.src = "assets/icons/music-off.png";
 
-    }
+            });
+
+        }
+
+    });
 
     // =========================
     // TOGGLE MUSIC
@@ -55,8 +60,14 @@ if (!musicButton || !musicIcon || !bgMusic) {
 
             try {
 
-                await bgMusic.play();
+            const savedTime =
+            parseFloat(localStorage.getItem("musicTime")) || 0;
 
+        if (savedTime > 0) {
+            bgMusic.currentTime = savedTime;
+        }
+
+await bgMusic.play();
                 musicIcon.src =
                     "assets/icons/music-on.png";
 
@@ -100,6 +111,19 @@ if (!musicButton || !musicIcon || !bgMusic) {
 
     });
 
+    setInterval(() => {
+
+    if (!bgMusic.paused) {
+
+        localStorage.setItem(
+            "musicTime",
+            bgMusic.currentTime
+        );
+
+    }
+
+    }, 3000);
+
     // =========================
     // WHEN MUSIC ENDS
     // =========================
@@ -120,5 +144,42 @@ if (!musicButton || !musicIcon || !bgMusic) {
             "assets/icons/music-off.png";
 
     });
+
+    function saveMusicState() {
+
+    localStorage.setItem(
+        "musicTime",
+        bgMusic.currentTime
+    );
+
+    localStorage.setItem(
+        "musicPlaying",
+        !bgMusic.paused
+    );
+
+    }
+
+    window.addEventListener(
+        "pagehide",
+        saveMusicState
+    );
+
+    window.addEventListener(
+        "beforeunload",
+        saveMusicState
+    );
+
+    document.addEventListener(
+        "visibilitychange",
+        () => {
+
+            if (document.visibilityState === "hidden") {
+
+                saveMusicState();
+
+            }
+
+        }
+    );
 
 }
