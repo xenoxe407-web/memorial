@@ -1,0 +1,777 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+
+    background:#251E44;
+
+    font-family:"Press Start 2P", cursive;
+
+    overflow-x:hidden;
+}
+
+/* ===================================== */
+/* FLOWER GARDEN */
+/* ===================================== */
+
+.garden-container{
+
+    position:relative;
+
+    width:100%;
+
+    min-height: 690px;
+
+    background:url("assets/background/flower-garden-bg.png") no-repeat top center;
+
+    background-size:100% auto;
+
+}
+
+/* ===================================== */
+/* ADD FLOWER BUTTON */
+/* ===================================== */
+
+#addFlowerButton{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:210px;
+
+    height:54px;
+
+    margin:20px auto 50px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#EEE4FB;
+
+    color:#3D2C63;
+
+    font-family:"Press Start 2P";
+
+    font-size:11px;
+
+    box-shadow:0 5px 0 #533A78;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#addFlowerButton:hover{
+
+    transform:translateY(-2px);
+
+}
+
+#addFlowerButton img{
+
+    width:20px;
+
+    image-rendering:pixelated;
+}
+
+#addFlowerButton:hover{
+
+    transform:translateX(-50%) translateY(-2px);
+}
+
+.phone{
+
+    width:min(100%,400px);
+
+    min-height:100vh;
+
+    margin:auto;
+
+    position:relative;
+
+    padding-bottom:100px;
+
+}
+
+/* ===================================== */
+/* VIRTUAL GARDEN TITLE */
+/* ===================================== */
+
+.garden-title{
+
+    position:absolute;
+
+    top:290px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#EADFFF;
+
+    font-size:10px;
+
+    white-space:nowrap;
+
+    z-index:10;
+
+}
+
+.garden-title .line{
+
+    width:32px;
+
+    height:2px;
+
+    background:#BFA5E8;
+
+}
+
+.bottom-nav{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    padding:14px 0;
+
+    background:#231B43;
+
+    border-radius:20px 20px 0 0;
+
+}
+
+.bottom-nav button{
+
+    border:none;
+
+    background:none;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+/* ===================================== */
+/* OVERLAY */
+/* ===================================== */
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:100;
+
+}
+
+/* ===================================== */
+/* BOTTOM SHEET */
+/* ===================================== */
+
+#flowerSheet{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:0;
+
+    transform:translate(-50%, 100%);
+
+    width:100%;
+
+    max-width:400px;
+
+    background:#F7F2FD;
+
+    border-radius:28px 28px 0 0;
+
+    padding:22px;
+
+    box-sizing:border-box;
+
+    transition:transform .35s ease;
+
+    z-index:9999;
+
+}
+
+#flowerSheet.show{
+
+    transform:translate(-50%, 0);
+
+}
+
+#overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.sheet-bar{
+
+    width:60px;
+
+    height:6px;
+
+    border-radius:999px;
+
+    background:#C8B5E8;
+
+    margin:0 auto 18px;
+
+}
+
+#flowerSheet h2{
+
+    text-align:center;
+
+    color:#3E2E61;
+
+    margin-bottom:8px;
+
+    font-size:18px;
+
+}
+
+.sheet-subtitle{
+
+    text-align:center;
+
+    color:#806AA6;
+
+    font-size:12px;
+
+    margin-bottom:22px;
+
+}
+
+.flower-picker{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+
+}
+
+.flower-option{
+
+    width:62px;
+
+    cursor:pointer;
+
+    padding:8px;
+
+    border-radius:14px;
+
+    border:2px solid transparent;
+
+}
+
+.flower-option.selected{
+
+    border-color:#7E5CC8;
+
+    background:#ECE2FA;
+
+}
+
+#flowerSheet label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    margin-top:16px;
+
+    color:#4B3B70;
+
+    font-size:11px;
+
+}
+
+#visitorName,
+#visitorMessage{
+
+    width:100%;
+
+    font-size: 10px;
+
+    border:2px solid #D9C8F5;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    font-family:inherit;
+
+}
+
+#visitorMessage{
+
+    resize:none;
+
+    height:100px;
+
+}
+
+#placeFlower{
+
+    width:100%;
+
+    margin-top:22px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#7D5CC8;
+
+    color:white;
+
+    font-family:"Press Start 2P";
+
+    cursor:pointer;
+
+}
+
+#cancelSheet{
+
+    width:100%;
+
+    margin-top:10px;
+
+    background:none;
+
+    border:none;
+
+    color:#6B5C93;
+
+    cursor:pointer;
+
+}
+
+.flower-option{
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.flower-option:hover{
+
+    transform:scale(1.05);
+
+}
+
+.flower-option.selected{
+
+    border:3px solid #7C5AC8;
+
+    border-radius:14px;
+
+    background:#EEE7FF;
+
+    transform:scale(1.08);
+
+}
+
+.garden-flower{
+
+    position:absolute;
+
+    width:48px;
+    height:auto;
+
+    transform:translate(-50%, -100%);
+
+    transition:
+        transform .25s ease;
+
+    cursor:pointer;
+
+}
+
+.garden-flower:hover{
+    transform: translate(-50%, -100%) scale(1.12);
+}
+
+#gardenCanvas{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:320px;
+
+    height:380px;
+
+    overflow:hidden;
+
+}
+
+#flower-layer{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+}
+
+.popup-overlay{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(20,10,35,.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.25s;
+
+    z-index:999;
+
+}
+
+.popup-overlay.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.flower-popup{
+
+    width:290px;
+
+    background:#fdf9ff;
+
+    border:4px solid #8d6cf7;
+
+    border-radius:18px;
+
+    padding:26px;
+
+    text-align:center;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+
+    transform:scale(.9);
+
+    transition:.25s;
+
+}
+
+.popup-overlay.show .flower-popup{
+
+    transform:scale(1);
+
+}
+
+.popup-label{
+
+    color:#8f84a5;
+
+    font-size:13px;
+
+    margin-top:6px;
+    margin-bottom:4px;
+
+}
+
+#popupAuthor{
+
+    margin:0;
+
+    color:#34204f;
+
+}
+
+.popup-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:#ddd2f5;
+
+    margin:16px 0;
+
+}
+
+#popupMessage{
+
+    color:#46395b;
+
+    line-height:1.6;
+
+    white-space:pre-wrap;
+
+}
+
+#popupDate{
+
+    display:block;
+
+    color:#8f84a5;
+
+    margin-bottom:18px;
+
+}
+
+#closePopup{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#8d6cf7;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#closePopup:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* =========================
+   Bottom Navigation
+========================= */
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(100%,430px);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:12px 0 14px;
+
+    background:#241B3B;
+
+    border-top:3px solid #b889d9;
+
+    box-shadow:0 -4px 12px rgba(0,0,0,.12);
+
+    z-index:1000;
+}
+
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-decoration:none;
+
+    color:#7a5aa8;
+
+    font-size:9px;
+
+    font-family:'Press Start 2P', cursive;
+
+    transition:.2s;
+}
+
+.nav-item img{
+    width:26px;
+    height:26px;
+
+    image-rendering:pixelated;
+}
+
+.nav-item.active{
+    background: #66509C;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 16px;
+}
+
+.nav-item.active img{
+    transform:translateY(-2px);
+    filter:drop-shadow(0 0 5px rgba(181,116,255,.7));
+}
+
+.nav-item:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   Garden Quote
+========================= */
+
+.garden-quote{
+
+    position:absolute;
+
+    top:145px;          /* Adjust until it sits inside the white panel */
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:50%;
+
+    text-align:center;
+
+    z-index:5;
+
+    color: #231B43;
+
+    font-family:"Pixelify Sans", sans-serif;
+
+    font-weight: 700;
+    
+}
+
+.garden-quote p{
+
+    margin:0;
+
+    color:#2E234F;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    line-height:1.45;
+
+}
+
+.garden-heart{
+
+    margin-top:10px;
+
+    font-size:16px;
+
+}
+
+.garden-flower{
+
+    width:48px;
+
+    height:auto;
+
+    display:block;
+
+    transition:transform .25s ease;
+
+    cursor:pointer;
+
+}
+
+.garden-flower:hover{
+
+    transform:scale(1.12);
+
+}
+
+.flower-marker{
+
+    position:absolute;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transform:translate(-50%, -75%);
+}
+
+
+.flower-name{
+
+    margin-top:-4px;
+
+    padding:2px 8px;
+
+    background:#ECE5FB;
+
+    border:2px solid #6D4DB0;
+
+    border-radius:6px;
+
+    color:#3A2B5A;
+
+    min-width:60px;
+
+    font-size:8px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    box-shadow:0 2px 0 #5A3FA4;
+
+}

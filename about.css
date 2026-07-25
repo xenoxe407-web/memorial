@@ -1,0 +1,944 @@
+/* ===========================
+   About Page
+=========================== */
+
+.about-page{
+
+    max-width:430px;
+
+    margin:auto;
+
+    padding-bottom:40px;
+
+    background:#1d1435;
+
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero-section{
+
+    position:relative;
+
+    text-align:center;
+
+    margin-top:-100px;
+
+}
+
+.wisteria{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.header-icon{
+
+    width:42px;
+
+    margin-top:-10px;
+
+}
+
+.about-header h1{
+
+    font-size:48px;
+
+    color:#f2d8ff;
+
+    margin-top:10px;
+
+}
+
+.memory-divider{
+
+    width:180px;
+
+    margin:5px auto;
+
+    display:block;
+
+}
+
+.about-header p{
+
+    color:#d8c8ef;
+
+    font-size:18px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+/* ===========================
+Intro
+=========================== */
+
+.intro-card{
+
+    width:88%;
+
+    margin:15px auto;
+
+    padding:22px;
+
+    border:2px solid #5b3b8d;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    line-height:1.8;
+
+    background:#2b2046;
+
+}
+
+/* ===========================
+Portrait
+=========================== */
+
+.portrait-section{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    margin-top:35px;
+    
+    height: 340px;
+
+}
+
+.portrait-table{
+
+    position:absolute;
+
+    top:250px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:410px;
+
+    z-index:1;
+
+}
+
+.portrait-candle{
+
+    width:70px;
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:55px;
+
+    z-index: 3;
+
+}
+
+.candle-glow{
+
+    position:absolute;
+
+    left:10px;          /* adjust natin later */
+
+    bottom:87px;        /* adjust based sa candle */
+
+    width:90px;         /* mas malaki kaysa candle */
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+.tin-photo{
+
+    width:220px;
+    height:275px;
+
+    position:absolute;
+
+    bottom:50px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:3;
+
+}
+
+.portrait-flower{
+
+    width:100px;
+
+    position:absolute;
+
+    right:5px;
+
+    bottom:55px;
+
+    z-index: 4;
+
+    height: 175px;
+
+}
+
+.corner-lights-left{
+    position:absolute;
+    top:340px;
+    left:3px;
+    width:135px;
+}
+
+.corner-lights-right{
+    position:absolute;
+    top:340px;
+    right:3px;
+    width:135px;
+}
+
+/* ===========================
+   Name Card
+=========================== */
+
+.name-card{
+
+    width:75%;
+
+    margin:-10px auto 25px auto;
+
+    padding:22px;
+
+    text-align:center;
+
+    background:#2b2046;
+
+    border:2px solid #5b3b8d;
+
+    border-radius:8px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.name-card h2{
+
+    font-family:"Pixelify Sans", cursive;
+
+    font-size:42px;
+
+    color:#dba8ff;
+
+    text-shadow:
+        0 0 8px rgba(225,185,255,.45),
+        2px 2px 0 #40205f;
+
+    margin-bottom:14px;
+
+}
+
+.name-card p:first-of-type{
+
+    color:#d7c4ea;
+
+    font-size:15px;
+
+}
+
+.name-card p:last-of-type{
+
+    color:#d4cdd8;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+/* ===========================
+   Identity Grid
+=========================== */
+
+.identity-grid{
+
+    width:92%;
+
+    margin:20px auto 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.identity-section{
+
+    background:#2f214d;
+
+    border:2px solid #65409d;
+
+    border-radius:18px;
+
+    padding:18px 16px;
+
+    margin:28px 0;
+
+}
+
+.identity-icon{
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.identity-card{
+
+    background:#362654;
+
+    border:1px solid #4d3570;
+
+    border-radius:12px;
+
+    max-width:100px;
+
+    min-height:100px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:8px;
+
+}
+
+.identity-card img{
+
+    width:52px;
+
+    height:52px;
+
+    object-fit:contain;
+
+    margin-bottom:10px;
+
+}
+
+.identity-card span{
+
+    display:block;
+
+    font-size:15px;
+
+    color:#f4e7ff;
+
+}
+
+.ign{
+
+    color:#d7c8e8;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+
+.nickname-title{
+
+    color:#cfaeff;
+
+    font-size:14px;
+
+    font-style:italic;
+
+    margin-bottom:10px;
+
+    opacity:.9;
+
+}
+
+.nicknames{
+
+    color:#f3eef8;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+.about-section{
+
+    width:92%;
+
+    margin:0 auto 18px;
+
+    background:#2f214d;
+
+    border:2px solid #65409d;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 22px;
+
+    border-bottom:2px solid #4c356e;
+
+}
+
+.section-header h2{
+
+    color:#dba8ff;
+
+    font-size:32px;
+
+    margin:0;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.section-heart{
+
+    margin-left:8px;
+
+    font-size:16px;
+
+}
+
+.section-title span{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    background:#4c3479;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+}
+
+
+.section-title h2{
+
+    color:#d9b8ff;
+
+    font-size:30px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.text-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:22px 0;
+
+}
+
+.text-divider::before,
+.text-divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:2px;
+
+    background:#5f3d86;
+
+}
+
+.text-divider span{
+
+    margin:0 12px;
+
+    color:#d8a8ff;
+
+    font-size:14px;
+
+}
+
+.section-number{
+
+    width:38px;
+
+    height:38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#5d3d8b;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Who Tin Was
+=========================== */
+
+.who-container{
+
+    display:flex;
+
+    align-items:flex-start;
+
+}
+
+.who-text{
+
+    flex:1;
+
+}
+
+.who-text p{
+
+    color:#ece3ff;
+
+    line-height:1.9;
+
+    margin-left: 10px;
+
+    font-family: "Pixelify Sans", sans-serif;
+    
+
+}
+
+.moon-window{
+
+    width:150px;
+
+    height: 350px;
+
+    flex-shrink:0;
+
+}
+
+/* ===========================
+   Icon Grid
+=========================== */
+
+.icon-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:5px;
+
+    margin: auto 5px 10px 5px;
+
+}
+
+.icon-card{
+
+    background:#271d42;
+
+    border:2px solid #47306e;
+
+    border-radius:16px;
+
+    padding:18px 12px;
+
+    text-align:center;
+
+}
+
+.icon-card img{
+
+    width:52px;
+
+    height:52px;
+
+    object-fit:contain;
+
+    margin-bottom:14px;
+
+}
+
+.icon-card p{
+
+    color:#f1e9ff;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+/* Icon Tweaks */
+
+img[src*="listener"]{
+
+    transform:scale(.82);
+
+}
+
+img[src*="family"]{
+
+    transform:scale(.92);
+
+}
+
+img[src*="lantern"]{
+
+    transform:scale(.92);
+
+}
+
+.verse-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+    margin-top:24px;
+
+}
+
+.bible{
+
+    width:125px;
+
+    flex-shrink:0;
+
+    margin-top:55px;
+
+    height: 200px;
+
+}
+
+.verse-text{
+
+    flex:1;
+
+}
+
+.verse-text h3{
+
+    color:#d9a8ff;
+
+    margin-bottom:14px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.verse-text p{
+
+    line-height:1.8;
+
+    color:#ece6f6;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.text-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:22px;
+
+}
+
+.text-divider::before,
+.text-divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:2px;
+
+    background:#5d3d8c;
+
+}
+
+.text-divider span{
+
+    margin:0 12px;
+
+}
+
+.thankyou-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:24px;
+
+    margin-top:24px;
+
+}
+
+.lantern{
+
+
+    flex-shrink:0;
+
+    width:130px;
+
+    margin-top:55px;
+
+    height: 250px;
+
+}
+
+.thankyou-text{
+
+    flex:1;
+
+}
+
+.thankyou-text p{
+
+    margin-bottom:20px;
+
+    line-height:1.7;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.quote-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:340px;
+
+    margin:0 auto;
+
+}
+
+.quote-frame{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.quote-text{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:80%;
+
+    text-align:center;
+
+    color:#dcaeff;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    font-style:italic;
+
+}
+
+.quote-heart{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#dcaeff;
+
+}
+
+.closing-section{
+
+    margin-top:50px;
+
+    margin-bottom:20px;
+
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(100%,430px);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:12px 0 14px;
+
+    background:#241B3B;
+
+    border-top:3px solid #b889d9;
+
+    box-shadow:0 -4px 12px rgba(0,0,0,.12);
+
+    z-index:1000;
+}
+
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-decoration:none;
+
+    color:#7a5aa8;
+
+    font-size:9px;
+
+    font-family:'Press Start 2P', cursive;
+
+    transition:.2s;
+}
+
+.nav-item img{
+    width:26px;
+    height:26px;
+
+    image-rendering:pixelated;
+}
+
+.nav-item.active{
+    background: #66509C;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 16px;
+}
+
+.nav-item.active img{
+    transform:translateY(-2px);
+    filter:drop-shadow(0 0 5px rgba(181,116,255,.7));
+}
+
+.nav-item:hover{
+    transform:translateY(-2px);
+}
+
+.site-footer{
+
+    text-align:center;
+
+    color:#BFA7E9;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+    margin:0 0 70px;
+
+    opacity:.85;
+
+}

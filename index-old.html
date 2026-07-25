@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In Loving Memory of Tin</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="loading-screen">
+<h1>In Loving Memory of Tin</h1>
+<p>Loading memories...</p>
+</div>
+
+<header class="hero">
+<h1>In Loving Memory of Tin</h1>
+<p>Forever remembered. Forever loved.</p>
+</header>
+
+<main class="memorial-room">
+
+    <aside class="side-panel left-panel">
+        <h3>About Tin 💜</h3>
+        <p>
+            Leave a flower and a short message in memory of Tin.
+        </p>
+    </aside>
+
+<div class="memorial-wall">
+
+<section class="window-section">
+
+    <div class="curtain left-curtain"></div>
+
+    <div id="sky">
+        <div id="sun"></div>
+        <div id="moon"></div>
+
+        <div id="clouds">
+            <span class="cloud c1"></span>
+            <span class="cloud c2"></span>
+            <span class="cloud c3"></span>
+        </div>
+    </div>
+
+    <div class="curtain right-curtain"></div>
+
+</section>
+
+<section class="memorial-title">
+
+    <h2>In Loving Memory of</h2>
+
+    <h1>Tin</h1>
+
+    <p>Forever in our hearts 💜</p>
+
+</section>
+
+<section class="portrait-section">
+
+    <div class="portrait-frame">
+        <img src="assets/images/tin.png" alt="Tin">
+    </div>
+
+</section>
+
+<section class="altar">
+
+<div class="candle">🕯️</div>
+<div class="urn">💜</div>
+<div class="candle">🕯️</div>
+
+</section>
+
+</div>
+
+<aside class="side-panel right-panel">
+    <h3>Memorial</h3>
+
+    <p>🌸 Leave a flower</p>
+    <p>💌 Share a memory</p>
+    <p>🎵 Listen to the music</p>
+</aside>
+
+</main>
+
+<section class="garden">
+<h2>Leave a Flower for Tin</h2>
+
+<div id="toolbar">
+<button class="flower-option" data-flower="rose">🌹</button>
+<button class="flower-option" data-flower="tulip">🌷</button>
+<button class="flower-option" data-flower="sunflower">🌻</button>
+<button class="flower-option" data-flower="cherry">🌸</button>
+</div>
+
+<div id="memorial-area">
+    <div id="flower-preview"></div>
+</div>
+</section>
+
+<section id="bottom-toolbar">
+
+    <div class="toolbar-group">
+        <label>Your Name (Optional)</label>
+        <input id="authorInput" type="text" placeholder="Anonymous">
+    </div>
+
+    <div class="toolbar-group message">
+        <label>Your Message (Optional)</label>
+        <textarea id="messageInput" maxlength="150" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <button id="placeFlowerButton">
+        Leave Flower
+    </button>
+
+</section>
+
+<button id="musicButton">🎵 Music</button>
+
+<div id="popup" class="hidden"></div>
+
+<audio id="bgMusic" src="assets/music/memorial.mp3" loop></audio>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

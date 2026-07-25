@@ -1,0 +1,897 @@
+/* ===========================
+   Candle Page
+=========================== */
+
+.candle-page{
+
+    max-width:900px;
+    margin:auto;
+
+    padding:20px 20px 80px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:2;
+
+}
+
+.candle-header{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top: -40px;
+
+}
+
+.candle-header h1{
+
+    font-size:38px;
+
+    color:#f4e6ff;
+
+    text-shadow:
+        0 0 10px rgba(197,137,255,.35);
+
+    margin:8px 0;
+
+    line-height:1;
+
+}
+
+.candle-header p{
+
+    font-size:17px;
+
+    color:#cba8ff;
+
+    margin-top:8px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+}
+
+.header-icon{
+
+    width:42px;
+
+    margin-bottom:30px;
+
+}
+
+.memory-divider{
+
+    width:140px;
+
+    margin:12px auto;
+
+    display:block;
+
+}
+
+
+/* ===========================
+   Altar
+=========================== */
+
+.altar-container{
+
+    position:relative;
+
+    margin-top:45px;
+
+    z-index:2;
+
+}
+
+.wisteria{
+
+    position:absolute;
+
+    top:-30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:115%;
+
+    max-width:500px;
+
+    z-index:0;
+
+    opacity:.95;
+
+    pointer-events:none;
+
+}
+
+.altar-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:35px;
+
+    margin-top:-50px;
+
+}
+
+.flower-left,
+.flower-right{
+    width:75px;
+    height: 130px;
+}
+
+.tin-photo{
+
+    width:200px;
+
+    height:130px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,208,122,.12));
+
+}
+
+.altar-table{
+
+    position: relative;
+
+    z-index: 1;
+
+    width:100%;
+    max-width:560px;
+
+    margin-top:-20px;
+
+}
+
+
+/* ===========================
+   Candle
+=========================== */
+
+.candle-wrapper{
+
+    position:relative;
+    width:90px;
+    height:150px;
+
+}
+
+.main-candle{
+
+    width:80px;
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:3;
+
+    top: 70px;
+
+}
+
+.candle-glow{
+
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:10px;
+
+    width:100px;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+}
+
+.candle-glow.show{
+
+    opacity:1;
+
+}
+
+
+/* ===========================
+   Counter
+=========================== */
+
+.candle-counter{
+
+    margin-top:-28px;
+
+    background:transparent;
+    border:none;
+    box-shadow:none;
+
+    padding:8px 20px;
+
+    margin-bottom:4px;
+
+}
+
+.candle-counter h2{
+
+    font-size:72px;
+
+    color:#efd8ff;
+
+    margin:0
+
+}
+
+.candle-counter p{
+
+    color:#caaeff;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+}
+
+
+/* ===========================
+   Button
+=========================== */
+
+#lightCandleBtn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    min-width:190px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #7a58b8 0%,
+            #6645a6 55%,
+            #573994 100%
+        );
+
+    color:#f8efff;
+
+    border:2px solid #a884ea;
+
+    border-radius:10px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 -2px 0 rgba(0,0,0,.25),
+        0 0 12px rgba(131,93,214,.18);
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#lightCandleBtn::before,
+#lightCandleBtn::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    color:#d7b46a;
+
+    font-size:9px;
+
+    opacity:.8;
+
+}
+
+#lightCandleBtn::before{
+
+    top:4px;
+    left:6px;
+
+}
+
+#lightCandleBtn::after{
+
+    bottom:4px;
+    right:6px;
+
+}
+
+#lightCandleBtn img{
+
+    width:20px;
+    height:20px;
+
+    display:block;
+
+    flex-shrink:0;
+
+    transform:translateY(-1px);
+
+}
+
+#lightCandleBtn:hover{
+
+    transform:translateY(-1px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #8663c8,
+            #6f4cb2,
+            #5f3d9d
+        );
+
+}
+
+#lightCandleBtn:disabled{
+
+    background:#b0a3d8;
+    cursor:default;
+    transform:none;
+
+}
+
+#lightCandleBtn:active{
+
+    transform:translateY(1px);
+
+    box-shadow:
+
+        inset 0 3px 6px rgba(0,0,0,.35);
+
+}
+
+#lightCandleBtn span{
+
+    font-size:16px;
+
+    letter-spacing:.3px;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   Quote
+=========================== */
+
+.candle-quote{
+
+    margin-top:10px;
+
+    padding:8px 0;
+
+    background:rgba(33,18,63,.78);
+
+    border-radius:18px;
+
+    border:2px solid rgba(154,110,255,.2);
+
+    color:#cfaeff;
+
+    font-style:italic;
+
+}
+
+
+/* ===========================
+   Lit State
+=========================== */
+
+.candle-glow.show{
+
+    opacity:1;
+
+}
+
+.main-candle.lit{
+
+    animation:flicker 2s infinite ease-in-out;
+
+}
+
+
+/* ===========================
+   Flicker
+=========================== */
+
+@keyframes flicker{
+
+    0%{
+        transform:translateX(-50%) scale(1);
+    }
+
+    50%{
+        transform:translateX(-50%) scale(1.02);
+    }
+
+    100%{
+        transform:translateX(-50%) scale(1);
+    }
+
+}
+
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:49%;
+    transform:translateX(-50%);
+
+    width:min(100%,430px);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:12px 0 14px;
+
+    background:#241B3B;
+
+    border-top:3px solid #b889d9;
+
+    box-shadow:0 -4px 12px rgba(0,0,0,.12);
+
+    z-index:1000;
+}
+
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-decoration:none;
+
+    color:#7a5aa8;
+
+    font-size:9px;
+
+    font-family:'Press Start 2P', cursive;
+
+    transition:.2s;
+}
+
+.nav-item img{
+    width:26px;
+    height:26px;
+
+    image-rendering:pixelated;
+}
+
+.nav-item.active{
+    background: #66509C;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 16px;
+}
+
+.nav-item.active img{
+    transform:translateY(-2px);
+    filter:drop-shadow(0 0 5px rgba(181,116,255,.7));
+}
+
+.nav-item:hover{
+    transform:translateY(-2px);
+}
+
+body{
+
+    margin:0;
+    background: linear-gradient(
+        180deg,
+        #120c24 0%,
+        #1a1234 45%,
+        #241544 100%
+    );
+
+    color:#f2e8ff;
+
+    min-height:100vh;
+}
+
+.page-stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    opacity:.4;
+
+}
+
+.hero-section{
+
+    position:relative;
+
+    padding-top:50px;
+
+}
+
+/* ===========================
+   Counter Decorations
+=========================== */
+
+.counter-decor{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:8px;
+}
+
+.counter-card{
+
+    width:90%;
+
+    top: -10px;
+
+    left: 20px;
+
+    padding:10px 10px;
+
+    background:linear-gradient(
+        180deg,
+        #2F234E 0%,
+        #24193D 100%
+    );
+
+    border:3px solid #4B3877;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+        inset 0 2px 0 rgba(255,255,255,.05),
+        0 6px 0 #1B132D;
+
+    position:relative;
+
+    z-index:20;
+}
+
+.counter-card p{
+
+    margin:0;
+
+    color:#D8C5F4;
+
+    font-size:15px;
+
+    line-height:1.5;
+}
+
+.sparkle{
+
+    width:10px;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.4;
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+.counter-heart{
+
+    width:16px;
+}
+
+/* ===========================
+   Divider
+=========================== */
+
+.counter-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:18px 0 22px;
+}
+
+.counter-divider span{
+
+    width:70px;
+
+    height:2px;
+
+    background:#7E61B9;
+
+    opacity:.6;
+}
+
+.counter-divider img{
+
+    width:14px;
+}
+
+/* ===========================
+   Quote Top
+=========================== */
+
+.quote-top{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:16px;
+
+    margin-bottom:6px;
+
+}
+
+.quote-top img{
+
+    width:12px;
+
+}
+
+/* ===========================
+   Candle Modal
+=========================== */
+
+.modal-overlay{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(20,15,35,.75);
+
+    backdrop-filter:blur(4px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s ease;
+
+    z-index:9999;
+
+}
+
+.modal-overlay.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.modal-card{
+
+    width:min(420px,90%);
+
+    background:#2f2547;
+
+    border:2px solid #a884ea;
+
+    border-radius:18px;
+
+    padding:35px 30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.45),
+        0 0 20px rgba(168,132,234,.15);
+
+    transform:translateY(20px);
+
+    transition:.3s ease;
+
+}
+
+.modal-overlay.show .modal-card{
+
+    transform:translateY(0);
+
+}
+
+.modal-icon{
+
+    font-size:56px;
+
+    margin-bottom:15px;
+
+}
+
+.modal-card h2{
+
+    color:#ffffff;
+
+    margin-bottom:15px;
+
+}
+
+.modal-card p{
+
+    color:#d7ccef;
+
+    line-height:1.7;
+
+    margin-bottom:12px;
+
+}
+
+#closeModalBtn{
+
+    margin-top:20px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 32px;
+
+    background:linear-gradient(
+        180deg,
+        #7a58b8,
+        #6543a4,
+        #563892
+    );
+
+    border:2px solid #a884ea;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#closeModalBtn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+#closeModalBtn:active{
+
+    transform:translateY(1px);
+
+}
+
+.memorial-section{
+
+    position:relative;
+
+    margin-top:-80px;
+
+    z-index:10;
+
+}
+
+.quote-card{
+
+    width:90%;
+
+    margin:-3px auto 40px;
+
+    padding:5px 5px;
+
+    background:linear-gradient(
+        180deg,
+        #2A1F45 0%,
+        #22173A 100%
+    );
+
+    border:2px solid #4B3877;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    position:relative;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+.quote-card::before,
+.quote-card::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:18px;
+
+    color:#8E6BC5;
+
+    font-size:12px;
+
+}
+
+.quote-card::before{
+
+    left:12px;
+
+}
+
+.quote-card::after{
+
+    right:12px;
+
+}
+
+.quote-card p{
+
+    margin:8px 0 16px;
+
+    color:#CDB3F5;
+
+    font-size:16px;
+
+    font-style:italic;
+
+    line-height:1.6;
+
+}
+
+.quote-text {
+    font-family: "Pixelify Sans", sans-serif;
+}

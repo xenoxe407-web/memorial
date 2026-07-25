@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle | In Loving Memory of Tin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="candle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+
+ <section class="candle-page">
+
+    <div class="hero-section">
+
+        <!-- Wisteria -->
+        <img
+            src="assets/decorations/wisteria-hanging.png"
+            class="wisteria">
+
+        <!-- Header Icon -->
+        <img
+            src="assets/icons/candle-up.png"
+            class="header-icon">
+
+        <!-- Header -->
+        <div class="candle-header">
+
+            <h1>Candle</h1>
+
+            <img
+                src="assets/decorations/memory-divider.png"
+                class="memory-divider">
+
+            <p>
+                A quiet place to remember Tin.
+            </p>
+
+        </div>
+
+        <!-- Altar -->
+        <div class="altar-container">
+
+            <div class="altar-content">
+
+                <img
+                    src="assets/decorations/purple-flowers-vase.png"
+                    class="flower-left">
+
+                <div class="candle-wrapper">
+
+                    <img
+                        src="assets/decorations/candle-glow.png"
+                        class="candle-glow"
+                        id="candleGlow">
+
+                    <img
+                        src="assets/icons/candle-off.png"
+                        class="main-candle"
+                        id="mainCandle">
+
+                </div>
+
+                <img
+                    src="assets/portraits/tin-photo-frame.png"
+                    class="tin-photo">
+
+                <img
+                    src="assets/decorations/white-flowers-vase.png"
+                    class="flower-right">
+
+            </div>
+
+            <img
+                src="assets/decorations/altar-table.png"
+                class="altar-table">
+
+        </div>
+
+    </div>
+
+
+    <!-- Counter Card -->
+
+<div class="memorial-section">
+
+    <div class="counter-card">
+
+        <div class="counter-decor">
+
+        <img src="assets/icons/pixel-sparkle.png" class="sparkle">
+
+        <img src="assets/icons/pixel-heart.png" class="counter-heart">
+
+        <img src="assets/icons/pixel-sparkle.png" class="sparkle">
+
+        </div>
+
+        <h2 id="candleCount">0</h2>
+
+        <p class="quote-text">
+
+            Lights have been offered
+
+            <br>
+
+            in remembrance of Tin.
+
+        </p>
+
+        <div class="counter-divider">
+
+        <span></span>
+
+        <img
+            src="assets/icons/pixel-heart.png">
+
+        <span></span>
+
+        </div>
+
+        <button id="lightCandleBtn">
+
+            <img src="assets/icons/candle-button.png">
+
+            <span>
+
+                Light a Candle
+
+            </span>
+
+        </button>
+
+    </div>
+
+    <div class="quote-card">
+
+    <div class="quote-top">
+
+        <img
+            src="assets/icons/pixel-sparkle.png">
+
+        <img
+            src="assets/icons/pixel-sparkle.png">
+
+    </div>
+
+    <p>
+
+        "Every light reminds us that love never fades."
+
+    </p>
+
+    <div class="counter-divider">
+
+        <span></span>
+
+        <img
+            src="assets/icons/pixel-heart.png">
+
+        <span></span>
+
+    </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Quote -->
+
+
+
+</section>
+
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item">
+        <img src="assets/icons/home-button.png" alt="Home">
+        <span>Home</span>
+    </a>
+
+    <a href="memory-book.html" class="nav-item">
+        <img src="assets/icons/memory-button.png" alt="Memory">
+        <span>Memory</span>
+    </a>
+
+    <a href="flower-garden.html" class="nav-item">
+        <img src="assets/icons/flower-button.png" alt="Garden">
+        <span>Garden</span>
+    </a>
+
+    <a href="candle.html" class="nav-item active">
+        <img src="assets/icons/candle-button.png" alt="Candle">
+        <span>Candle</span>
+    </a>
+
+    <a href="about.html" class="nav-item">
+        <img src="assets/icons/about-button.png" alt="About">
+        <span>About</span>
+    </a>
+
+</nav>
+
+
+
+    <div id="candleModal" class="modal-overlay">
+
+    <div class="modal-card">
+
+        <div class="modal-icon">🕯️</div>
+
+        <h2>Your candle has been lit.</h2>
+
+        <p>
+            Thank you for taking a moment to remember Tin.
+        </p>
+
+        <p>
+            Every light offered here is a reminder that love continues to shine.
+        </p>
+
+        <button id="closeModalBtn">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<button id="music-toggle">
+
+    <img
+        id="music-icon"
+        src="assets/icons/music-off.png"
+        alt="Music">
+
+</button>
+
+<audio
+    id="bgMusic"
+    preload="auto"
+    loop>
+
+    <source
+        src="assets/music/memorial.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<script type="module" src="candle.js"></script>
+<script type="module" src="music.js"></script>
+
+</body>
+
+</html>

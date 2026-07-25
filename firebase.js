@@ -6,7 +6,13 @@ import {
     getFirestore,
     collection,
     addDoc,
-    onSnapshot
+    onSnapshot,
+    serverTimestamp,
+    query,
+    orderBy,
+    doc,
+    updateDoc,
+    increment
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -21,6 +27,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+export { db };
+
 console.log("✅ Firebase Connected!");
 console.log("✅ Firestore Connected!");
 
@@ -28,18 +36,23 @@ console.log("✅ Firestore Connected!");
 // Save Flower
 // ===========================
 
-export async function saveFlower(type, x, y, message, author) {
+export async function saveFlower(flowerData) {
 
-    await addDoc(collection(db, "flowers"), {
+    console.log("Saving:", flowerData);
 
-        type,
-        x,
-        y,
-        message,
-        author,
-        createdAt: Date.now()
+    await addDoc(
 
-    });
+        collection(db, "flowers"),
+
+        {
+
+            ...flowerData,
+
+            createdAt: serverTimestamp()
+
+        }
+
+    );
 
 }
 
@@ -60,6 +73,115 @@ export function listenFlowers(callback) {
         });
 
         callback(flowers);
+
+    });
+
+}
+
+// ===========================
+// Save Memory
+// ===========================
+
+export async function saveMemory(memoryData) {
+
+    console.log("Saving Memory:", memoryData);
+
+    await addDoc(
+
+        collection(db, "memories"),
+
+        {
+
+            ...memoryData,
+
+            likes: 0,
+
+            createdAt: serverTimestamp()
+
+        }
+
+    );
+
+}
+
+// ===========================
+// Realtime Memories
+// ===========================
+
+export function listenMemories(callback) {
+
+    const q = query(
+
+        collection(db, "memories"),
+
+        orderBy("createdAt", "desc")
+
+    );
+
+    return onSnapshot(q, (snapshot) => {
+
+        const memories = [];
+
+        snapshot.forEach((doc) => {
+
+            memories.push({
+
+                id: doc.id,
+
+                ...doc.data()
+
+            });
+
+        });
+
+        callback(memories);
+
+    });
+
+}
+
+// ===========================
+// Like Memory
+// ===========================
+
+export async function likeMemory(memoryId) {
+
+    await updateDoc(
+
+        doc(db, "memories", memoryId),
+
+        {
+
+            likes: increment(1)
+
+        }
+
+    );
+
+}
+
+/* ===========================
+   Candle
+=========================== */
+
+export async function saveCandle(){
+
+    await addDoc(
+        collection(db, "candles"),
+        {
+            createdAt: serverTimestamp()
+        }
+    );
+
+}
+
+export function listenCandles(callback){
+
+    const candlesRef = collection(db, "candles");
+
+    onSnapshot(candlesRef, (snapshot)=>{
+
+        callback(snapshot.size);
 
     });
 

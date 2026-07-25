@@ -3,80 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorial</title>
+
+    <title>In Loving Memory of Tin</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="container">
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
 
-        <h1>🌸 Memorial 🌸</h1>
+    <section class="hero"></section>
 
-        <div id="memorial-area">
+    <!-- ========================= -->
+    <!-- MENU -->
+    <!-- ========================= -->
 
-            <div id="urn">🏺</div>
+    <main class="menu">
 
-            <!-- Message Popup -->
-            <div id="popup" class="hidden">
-                <p id="popup-message"></p>
+        <!-- Light Candle -->
+        <button class="menu-card" id="candleBtn">
+
+            <img src="assets/icons/candle.png"
+                 alt="Candle"
+                 class="menu-icon">
+
+            <div class="menu-text">
+                <h2>Light a Candle</h2>
+                <p>Keep her memory glowing.</p>
             </div>
 
-        </div>
+            <span class="card-arrow">❯</span>
 
-        <div id="flower-basket">
+        </button>
 
-            <h3>Flower Basket</h3>
+        <!-- Message -->
+        <button class="menu-card" id="messageBtn">
 
-            <p id="selectedFlowerText">
-                Selected Flower: None
+            <img src="assets/icons/envelope.png"
+                 alt="Envelope"
+                 class="menu-icon">
+
+            <div class="menu-text">
+                <h2>Leave a Message</h2>
+                <p>Share your memories.</p>
+            </div>
+
+            <span class="card-arrow">❯</span>
+
+        </button>
+
+        <div class="candle-counter-card">
+
+        <img
+            src="assets/icons/candle-wreath.png"
+            class="counter-wreath">
+
+        <div class="counter-content">
+
+            <h3>Candles Lit</h3>
+
+            <h1 id="candleCount">0</h1>
+
+            <p>
+                Thank you for keeping her
+                <br>
+                memory alive.
             </p>
 
-            <button class="flower-option" data-flower="rose">🌹 Rose</button>
-            <button class="flower-option" data-flower="tulip">🌷 Tulip</button>
-            <button class="flower-option" data-flower="sunflower">🌻 Sunflower</button>
-            <button class="flower-option" data-flower="cherry">🌸 Cherry Blossom</button>
-
         </div>
+
+        <img
+            src="assets/icons/floating-hearts.png"
+            class="counter-hearts">
 
     </div>
 
-    <!-- Offer Flower Modal -->
+        <!-- Flower -->
+        <button class="menu-card" id="gardenBtn">
 
-    <div id="offerModal" class="modal hidden">
+            <img src="assets/icons/flower.png"
+                 alt="Flower"
+                 class="menu-icon">
 
-        <div class="modal-content">
-
-            <h2>🌸 Offer a Flower</h2>
-
-            <input
-                type="text"
-                id="authorInput"
-                placeholder="Your name"
-            >
-
-            <textarea
-                id="messageInput"
-                placeholder="Leave a message for Tin 💜"
-            ></textarea>
-
-            <div class="modal-buttons">
-
-                <button id="cancelBtn">
-                    Cancel
-                </button>
-
-                <button id="offerBtn">
-                    🌸 Offer Flower
-                </button>
-
+            <div class="menu-text">
+                <h2>Flower Garden</h2>
+                <p>A garden that never fades.</p>
             </div>
 
-        </div>
+            <span class="card-arrow">❯</span>
 
-    </div>
+        </button>
 
-    <script type="module" src="script.js"></script>
+        <!-- Memories -->
+        <button class="menu-card" id="memoryBtn">
+
+            <img src="assets/icons/camera.png"
+                 alt="Camera"
+                 class="menu-icon">
+
+            <div class="menu-text">
+                <h2>Memories</h2>
+                <p>Moments we'll treasure forever.</p>
+            </div>
+
+            <span class="card-arrow">❯</span>
+
+        </button>
+
+        <!-- About -->
+        <button class="menu-card" id="aboutBtn">
+
+            <img src="assets/icons/diary.png"
+                 alt="Diary"
+                 class="menu-icon">
+
+            <div class="menu-text">
+                <h2>About Tin</h2>
+                <p>The story behind her smile.</p>
+            </div>
+
+            <span class="card-arrow">❯</span>
+
+        </button>
+
+    </main>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item active">
+        <img src="assets/icons/home-button.png" alt="Home">
+        <span>Home</span>
+    </a>
+
+    <a href="memory-book.html" class="nav-item">
+        <img src="assets/icons/memory-button.png" alt="Memory">
+        <span>Memory</span>
+    </a>
+
+    <a href="flower-garden.html" class="nav-item">
+        <img src="assets/icons/flower-button.png" alt="Garden">
+        <span>Garden</span>
+    </a>
+
+    <a href="candle.html" class="nav-item">
+        <img src="assets/icons/candle-button.png" alt="Candle">
+        <span>Candle</span>
+    </a>
+
+    <a href="about.html" class="nav-item">
+        <img src="assets/icons/about-button.png" alt="About">
+        <span>About</span>
+    </a>
+
+</nav>
+
+<!-- Floating Music Button -->
+
+<button id="music-toggle">
+
+    <img
+        id="music-icon"
+        src="assets/icons/music-off.png"
+        alt="Music">
+
+</button>
+
+<audio
+    id="bgMusic"
+    preload="auto"
+    loop>
+
+    <source
+        src="assets/music/memorial.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="music.js"></script>
 
 </body>
 </html>

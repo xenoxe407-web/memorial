@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Book</title>
+
+    <link rel="stylesheet" href="memory-book.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="phone">
+
+        <!-- =========================
+        HEADER
+        ========================= -->
+
+<header class="memory-header">
+
+    <img src="assets/icons/book-open.png"
+         alt="Book"
+         class="header-book">
+
+    <h1>MEMORY BOOK</h1>
+
+    <div class="header-divider">
+        <span></span>
+        ❤
+        <span></span>
+    </div>
+
+    <p>
+        A collection of memories,
+        stories, and messages shared
+        with love for Tin.
+    </p>
+
+</header>
+
+        <!-- =========================
+            SEARCH
+        ========================= -->
+
+        <div class="search-box">
+
+        <img src="assets/icons/search.png"
+         alt="Search">
+
+        <input
+        id="searchInput"
+        type="text"
+        placeholder="Search memories...">
+
+        </div>
+
+<!-- =========================
+        MEMORY LIST
+========================= -->
+
+<section
+    class="memory-list"
+    id="memoryList">
+
+</section>
+
+<div class="write-memory">
+
+    <button id="writeMemoryBtn">
+
+        <img src="assets/icons/plus-memory.png"
+             alt="Plus">
+
+        Write a Memory
+
+    </button>
+
+</div>
+
+<!-- ==========================================
+     MEMORY DETAIL POPUP
+=========================================== -->
+
+<div id="memoryOverlay" class="popup-overlay hidden">
+
+    <div class="memory-popup">
+
+        <button id="closePopup" class="close-popup">
+            ✕
+        </button>
+
+        <!-- Banner -->
+        <div class="popup-banner">
+
+            <img
+                src="assets/decorations/wisteria-hanging.png"
+                class="popup-top-vines"
+                alt="Flowers">
+
+        </div>
+
+        <!-- Journal Paper -->
+        <div class="popup-content">
+
+            <img
+                src="assets/decorations/popup-corner-left.png"
+                class="popup-corner-left"
+                alt="">
+
+            <img
+                src="assets/decorations/popup-corner-right.png"
+                class="popup-corner-right"
+                alt="">
+
+            <img
+                src="assets/icons/feather.png"
+                class="popup-feather"
+                alt="Avatar">
+
+            <!-- Header -->
+            <div class="popup-header">
+
+                <div class="popup-author">
+
+                    <h2 id="popupName">Xen</h2>
+
+                    <span id="popupDate">
+                        July 20, 2026
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="popup-divider">
+                ✨----💜----✨
+            </div>
+        
+                
+            <!-- Memory -->
+            <div
+                id="popupMessage"
+                class="popup-message">
+
+                I still remember the first time...
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+
+            <button id="popupLike" class="popup-like">
+
+            <img
+                src="assets/icons/heart-outline.png"
+                alt="Like">
+
+            <span id="popupLikeCount">0</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item">
+        <img src="assets/icons/home-button.png" alt="Home">
+        <span>Home</span>
+    </a>
+
+    <a href="memory-book.html" class="nav-item active">
+        <img src="assets/icons/memory-button.png" alt="Memory">
+        <span>Memory</span>
+    </a>
+
+    <a href="flower-garden.html" class="nav-item">
+        <img src="assets/icons/flower-button.png" alt="Garden">
+        <span>Garden</span>
+    </a>
+
+    <a href="candle.html" class="nav-item">
+        <img src="assets/icons/candle-button.png" alt="Candle">
+        <span>Candle</span>
+    </a>
+
+    <a href="about.html" class="nav-item">
+        <img src="assets/icons/about-button.png" alt="About">
+        <span>About</span>
+    </a>
+
+</nav>
+
+<button id="music-toggle">
+
+    <img
+        id="music-icon"
+        src="assets/icons/music-off.png"
+        alt="Music">
+
+</button>
+
+<audio
+    id="bgMusic"
+    preload="auto"
+    loop>
+
+    <source
+        src="assets/music/memorial.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script type="module" src="memory-book.js"></script>
+<script type="module" src="music.js"></script>
+
+</body>
+</html>

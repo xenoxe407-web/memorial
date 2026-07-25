@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Write a Memory</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="write-memory.css">
+
+</head>
+
+<body>
+
+    <div class="phone">
+
+        <div class="write-memory-page">
+
+        <header class="write-header">
+
+        <button class="back-btn">
+
+            <img
+            src="assets/icons/back.png"
+            alt="Back">
+
+        </button>
+
+        </header>
+
+            <!-- Decoration -->
+
+            <div class="form-decoration">
+
+                <img
+                    src="assets/icons/feather.png"
+                    class="form-feather"
+                    alt="Feather">
+
+                <img
+                    src="assets/decorations/memory-divider.png"
+                    class="form-divider"
+                    alt="Divider">
+
+            </div>
+
+            <!-- Form -->
+
+            <form class="memory-form">
+
+                <!-- Name -->
+
+                <label for="memoryName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="memoryName"
+                    placeholder="Enter your name...">
+
+                <!-- Anonymous -->
+
+                <label class="anonymous-option">
+
+                    <input
+                        type="checkbox"
+                        id="anonymousCheck">
+
+                    <span>Post as anonymous</span>
+
+                </label>
+
+                <!-- Memory -->
+
+                <label for="memoryText">
+                    Your Memory
+                </label>
+
+                <textarea
+                    id="memoryText"
+                    maxlength="1000"
+                    placeholder="Share your memory, story, or message for Tin..."></textarea>
+
+                <div class="character-counter">
+
+                    <span id="charCount">0</span>/1000
+
+                </div>
+
+            </form>
+
+            <!-- Divider -->
+
+            <img
+                src="assets/decorations/memory-divider.png"
+                class="submit-divider"
+                alt="Divider">
+
+            <!-- Button -->
+
+            <button
+                class="submit-memory-btn"
+                type="button">
+
+                Add to the Memory Book
+
+            </button>
+
+            <!-- Footer -->
+
+            <p class="memory-note">
+
+                Your memory will be visible to everyone and saved forever.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <button id="music-toggle">
+
+    <img
+        id="music-icon"
+        src="assets/icons/music-off.png"
+        alt="Music">
+
+    </button>
+
+    <audio
+        id="bgMusic"
+        preload="auto"
+        loop>
+
+        <source
+            src="assets/music/memorial.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+    <script type="module" src="write-memory.js"></script>
+    <script type="module" src="music.js"></script>
+
+</body>
+
+</html>

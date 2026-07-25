@@ -1,179 +1,72 @@
-import { saveFlower, listenFlowers } from "./firebase.js";
+// =========================
+// HOME PAGE
+// =========================
 
-let selectedFlower = null;
-let clickX = 0;
-let clickY = 0;
+console.log("🏠 Home page loaded.");
 
-const flowerButtons = document.querySelectorAll(".flower-option");
-const selectedFlowerText = document.getElementById("selectedFlowerText");
-const memorialArea = document.getElementById("memorial-area");
+// =========================
+// ELEMENTS
+// =========================
 
-const popup = document.getElementById("popup");
-const popupMessage = document.getElementById("popup-message");
+import { listenCandles } from "./firebase.js";
 
-const offerModal = document.getElementById("offerModal");
-const authorInput = document.getElementById("authorInput");
-const messageInput = document.getElementById("messageInput");
-const offerBtn = document.getElementById("offerBtn");
-const cancelBtn = document.getElementById("cancelBtn");
+const candleBtn = document.getElementById("candleBtn");
+const messageBtn = document.getElementById("messageBtn");
+const gardenBtn = document.getElementById("gardenBtn");
+const memoryBtn = document.getElementById("memoryBtn");
+const aboutBtn = document.getElementById("aboutBtn");
 
-// =======================
-// Create Flower
-// =======================
+// =========================
+// NAVIGATION
+// =========================
 
-function createFlower(type, x, y, message = "", author = "Anonymous") {
+// Light a Candle
+candleBtn?.addEventListener("click", () => {
 
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
+    window.location.href = "candle.html";
 
-    switch (type) {
-        case "rose":
-            flower.textContent = "🌹";
-            break;
-        case "tulip":
-            flower.textContent = "🌷";
-            break;
-        case "sunflower":
-            flower.textContent = "🌻";
-            break;
-        case "cherry":
-            flower.textContent = "🌸";
-            break;
-    }
+});
 
-    flower.style.left = x + "px";
-    flower.style.top = y + "px";
+// Leave a Message
+messageBtn?.addEventListener("click", () => {
 
-    // Show popup
-    flower.addEventListener("click", (event) => {
+    window.location.href = "write-memory.html";
 
-        event.stopPropagation();
+});
 
-        popupMessage.innerHTML = `
-            <strong>${author || "Anonymous"}</strong><br><br>
-            ${message || "No message."}
-        `;
+// Flower Garden
+gardenBtn?.addEventListener("click", () => {
 
-        popup.style.left = (x + 35) + "px";
-        popup.style.top = y + "px";
+    window.location.href = "flower-garden.html";
 
-        popup.classList.remove("hidden");
+});
+
+// Memories
+memoryBtn?.addEventListener("click", () => {
+
+    window.location.href = "memory-book.html";
+
+});
+
+// About
+aboutBtn?.addEventListener("click", () => {
+
+    window.location.href = "about.html";
+
+});
+
+const candleCount = document.getElementById("candleCount");
+
+if (candleCount) {
+
+    listenCandles((count) => {
+
+        console.log("Candles:", count);
+
+        candleCount.textContent = count.toLocaleString();
+
+        console.log(candleCount);
 
     });
-
-    memorialArea.appendChild(flower);
 
 }
-
-// =======================
-// Hide Popup
-// =======================
-
-memorialArea.addEventListener("click", () => {
-
-    popup.classList.add("hidden");
-
-});
-
-// =======================
-// Real-time Listener
-// =======================
-
-listenFlowers((flowers) => {
-
-    document.querySelectorAll(".flower").forEach(f => f.remove());
-
-    flowers.forEach(flower => {
-
-        createFlower(
-            flower.type,
-            flower.x,
-            flower.y,
-            flower.message,
-            flower.author
-        );
-
-    });
-
-});
-
-// =======================
-// Select Flower
-// =======================
-
-flowerButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        selectedFlower = button.dataset.flower;
-
-        selectedFlowerText.textContent =
-            "Selected Flower: " + selectedFlower;
-
-    });
-
-});
-
-// =======================
-// Open Offer Modal
-// =======================
-
-memorialArea.addEventListener("click", (event) => {
-
-    // Don't open modal if clicking a flower
-    if (event.target.classList.contains("flower")) {
-        return;
-    }
-
-    if (selectedFlower === null) {
-
-        alert("Please choose a flower first. 🌸");
-        return;
-
-    }
-
-    clickX = event.offsetX;
-    clickY = event.offsetY;
-
-    authorInput.value = "";
-    messageInput.value = "";
-
-    offerModal.classList.remove("hidden");
-
-});
-
-// =======================
-// Cancel
-// =======================
-
-cancelBtn.addEventListener("click", () => {
-
-    offerModal.classList.add("hidden");
-
-});
-
-// =======================
-// Offer Flower
-// =======================
-
-offerBtn.addEventListener("click", async () => {
-
-    const author = authorInput.value.trim() || "Anonymous";
-    const message = messageInput.value.trim();
-
-    await saveFlower(
-        selectedFlower,
-        clickX,
-        clickY,
-        message,
-        author
-    );
-
-    // Close modal
-    offerModal.classList.add("hidden");
-
-    // Reset selection
-    selectedFlower = null;
-    selectedFlowerText.textContent = "Selected Flower: None";
-
-});

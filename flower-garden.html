@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Flower Garden</title>
+
+    <link rel="stylesheet"
+          href="flower-garden.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+    <div class="garden-quote-card">
+
+        <p class="garden-quote">
+            Every flower planted here<br>
+            blooms in loving memory of Tin.
+        </p>
+
+
+
+    </div>
+
+<body>
+
+    <div class="phone">
+
+        <!-- ========================= -->
+        <!-- FLOWER GARDEN -->
+        <!-- ========================= -->
+
+        <section class="garden-container">
+
+    <!-- Title -->
+    <div class="garden-title">
+
+        <span class="line"></span>
+
+        <span>Virtual Garden</span>
+
+        <span class="line"></span>
+
+    </div>
+
+    <!-- Actual Garden Area -->
+    <div id="gardenCanvas">
+
+        <div id="flower-layer"></div>
+
+    </div>
+
+</section>
+
+        <!-- ========================= -->
+        <!-- ADD FLOWER BUTTON -->
+        <!-- ========================= -->
+
+        <button id="addFlowerButton">
+
+            <img src="assets/icons/plus.png"
+                 alt="Plus">
+
+            <span>Add Flower</span>
+
+        </button>
+
+            <div id="flowerSheet">
+
+        <div class="sheet-bar"></div>
+
+        <h2>Add a Flower</h2>
+
+        <p class="sheet-subtitle">
+
+            Choose a flower
+
+        </p>
+
+        <div class="flower-picker">
+
+            <img src="assets/flowers/rose.png"
+                 class="flower-option"
+                 data-flower="rose">
+
+            <img src="assets/flowers/tulip.png"
+                 class="flower-option"
+                 data-flower="tulip">
+
+            <img src="assets/flowers/sunflower.png"
+                 class="flower-option"
+                 data-flower="sunflower">
+
+            <img src="assets/flowers/cherry.png"
+                 class="flower-option"
+                 data-flower="cherry">
+
+        </div>
+
+        <label for="visitorName">
+
+            Your Name (optional)
+
+        </label>
+
+        <input
+            id="visitorName"
+            type="text"
+            placeholder="Anonymous">
+
+        <label for="visitorMessage">
+
+            Your Message (optional)
+
+        </label>
+
+        <textarea
+            id="visitorMessage"
+            placeholder="Leave a message..."></textarea>
+
+        <button id="placeFlower">
+
+            🌸 Place Flower
+
+        </button>
+
+        <button id="cancelSheet">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- OVERLAY -->
+    <!-- ========================= -->
+
+    <div id="overlay"></div>
+
+    <!-- ========================= -->
+    <!-- FLOWER SHEET -->
+    <!-- ========================= -->
+
+    <div id="flowerPopupOverlay" class="popup-overlay">
+
+        <div class="flower-popup">
+
+            <img id="popupFlower" src="">
+
+            <p class="popup-label">
+                A flower left by
+            </p>
+
+            <h3 id="popupAuthor">
+                 Someone
+            </h3>
+
+        <div class="popup-divider"></div>
+
+            <p id="popupMessage"></p>
+
+        <div class="popup-divider"></div>
+
+        <small id="popupDate"></small>
+
+            <button id="closePopup">
+             Close
+            </button>
+
+        </div>
+
+    </div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item">
+        <img src="assets/icons/home-button.png" alt="Home">
+        <span>Home</span>
+    </a>
+
+    <a href="memory-book.html" class="nav-item">
+        <img src="assets/icons/memory-button.png" alt="Memory">
+        <span>Memory</span>
+    </a>
+
+    <a href="flower-garden.html" class="nav-item active">
+        <img src="assets/icons/flower-button.png" alt="Garden">
+        <span>Garden</span>
+    </a>
+
+    <a href="candle.html" class="nav-item">
+        <img src="assets/icons/candle-button.png" alt="Candle">
+        <span>Candle</span>
+    </a>
+
+    <a href="about.html" class="nav-item">
+        <img src="assets/icons/about-button.png" alt="About">
+        <span>About</span>
+    </a>
+
+</nav>
+
+<button id="music-toggle">
+
+    <img
+        id="music-icon"
+        src="assets/icons/music-off.png"
+        alt="Music">
+
+</button>
+
+<audio
+    id="bgMusic"
+    preload="auto"
+    loop>
+
+    <source
+        src="assets/music/memorial.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script type="module" src="flower-garden.js"></script>
+<script type="module" src="music.js"></script>
+
+</body>
+
+</html>
