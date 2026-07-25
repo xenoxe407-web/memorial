@@ -21,34 +21,33 @@ if (!musicButton || !musicIcon || !bgMusic) {
     // =========================
 
     const savedPlaying =
-        localStorage.getItem("musicPlaying") === "true";
+    localStorage.getItem("musicPlaying") === "true";
 
-    const savedTime =
-        parseFloat(localStorage.getItem("musicTime")) || 0;
+bgMusic.addEventListener("loadedmetadata", () => {
 
-    // Wait until audio metadata is ready
-    bgMusic.addEventListener("loadedmetadata", () => {
+    const latestTime = parseFloat(
+        localStorage.getItem("musicTime")
+    ) || 0;
 
-        if (savedTime > 0) {
-            bgMusic.currentTime = savedTime;
-        }
+    if (latestTime > 0) {
+        bgMusic.currentTime = latestTime;
+    }
 
-        if (savedPlaying) {
+    if (savedPlaying) {
 
-            bgMusic.play().then(() => {
+        bgMusic.play().then(() => {
 
-                musicIcon.src = "assets/icons/music-on.png";
+            musicIcon.src = "assets/icons/music-on.png";
 
-            }).catch(() => {
+        }).catch(() => {
 
-                // Browser blocked autoplay
-                musicIcon.src = "assets/icons/music-off.png";
+            musicIcon.src = "assets/icons/music-off.png";
 
-            });
+        });
 
-        }
+    }
 
-    });
+});
 
     // =========================
     // TOGGLE MUSIC

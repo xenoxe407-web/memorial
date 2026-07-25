@@ -889,6 +889,8 @@ img[src*="lantern"]{
     box-shadow:0 -4px 12px rgba(0,0,0,.12);
 
     z-index:1000;
+
+    font-family: "Pixelify Sans", sans-serif;
 }
 
 .nav-item{
